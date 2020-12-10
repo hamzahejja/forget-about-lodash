@@ -1,0 +1,19 @@
+{
+  "name": "forget-about-lodash",
+  "version": "1.0.0",
+  "description": "Lodash functions re-created with Vanilla JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzahejja/forget-about-lodash.git"
+  },
+  "author": "Hamza Hejja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamzahejja/forget-about-lodash/issues"
+  },
+  "homepage": "https://github.com/hamzahejja/forget-about-lodash#readme"
+}
