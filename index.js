@@ -204,10 +204,29 @@ const isSimilar = (val1, val2) => {
     val1 === val2;
 }
 
+/**
+ * Creates an array of elements split into groups the length of size.
+ * If array can't be split evenly, the final chunk will be the remaining elements.
+ * Lodash: _.chunk(array, [size=1]), https://lodash.com/docs/4.17.15#chunk
+ *
+ * @param {Array} array - the array to process.
+ * @param {Number} size - the length of each chunk.
+ * @return {Array} - the new array of chunks
+ */
+const chunk = (array, size = 1) => {
+  const chunks = Array.from({ length: Math.floor(array.length / size) }, (_, i) => i)
+    .map(i => array.slice(i * size, (i + 1) * size));
+
+  return (chunks.length * size) === array.length ?
+    chunks:
+    [...chunks, array.slice(chunks.length * size)];
+}
+
 module.exports = {
   pull,
   find,
   drop,
+  chunk,
   dropWhile,
   difference,
   differenceBy,
