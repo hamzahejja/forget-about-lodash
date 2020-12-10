@@ -4,7 +4,7 @@
   "description": "Lodash functions re-created with Vanilla JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/hamzahejja/forget-about-lodash/issues"
   },
-  "homepage": "https://github.com/hamzahejja/forget-about-lodash#readme"
+  "homepage": "https://github.com/hamzahejja/forget-about-lodash#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }

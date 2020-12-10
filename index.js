@@ -9,7 +9,7 @@
  *
  * @return {object}
  */
-const find = (collection, predicate, startIndex) => {
+const find = (collection, predicate, startIndex = 0) => {
   const searchCollection = Array.isArray(collection) ? collection : Object.values(collection);
 
   if (typeof(predicate) === 'object') {
@@ -202,4 +202,14 @@ const isSimilar = (val1, val2) => {
   return typeof(val1 === 'object' && typeof(val2) === 'object') ?
     JSON.stringify(val1) === JSON.stringify(val2):
     val1 === val2;
+}
+
+module.exports = {
+  pull,
+  find,
+  drop,
+  dropWhile,
+  difference,
+  differenceBy,
+  intersection
 }
