@@ -1,5 +1,8 @@
 {
   "name": "forget-about-lodash",
+  "jest": {
+      "verbose": true
+  },
   "version": "1.0.0",
   "description": "Lodash functions re-created with Vanilla JavaScript",
   "main": "index.js",
