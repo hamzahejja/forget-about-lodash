@@ -21,4 +21,4 @@ describe('chunk(array, size = 1) "Array" Method', () => {
     const expected = _chunk(inputArr);
     expect(actual).toEqual(expected);
   });
-})
+});
