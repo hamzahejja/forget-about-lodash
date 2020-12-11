@@ -44,9 +44,15 @@ const pull = (arr, ...args) => {
  * @param {function|object} fn
  */
 const dropWhile = (arr, fn) => {
-  return typeof(fn) === 'function' ?
-    arr.slice(arr.findIndex(v => !fn(v))):
-    arr.slice(arr.findIndex(v => !buildObjectLikePredicate(v, fn)));
+  if (typeof(fn) === 'function') {
+    return arr.slice(arr.findIndex(v => !fn(v)));
+  } else if (typeof(fn) === 'string') {
+    return arr.slice(arr.findIndex(v => !v[fn]));
+  }
+
+  return Array.isArray(fn) ?
+      arr.slice(arr.findIndex(v => !buildArrayTypePredicate(v, fn))):
+      arr.slice(arr.findIndex(v => !buildObjectLikePredicate(v, fn)));
 }
 
 /**
@@ -58,6 +64,12 @@ const dropWhile = (arr, fn) => {
  */
 const buildObjectLikePredicate = (obj, predicateFn) => {
   return Object.entries(predicateFn).every(([key, value]) => obj[key] === value);
+}
+
+const buildArrayTypePredicate = (obj, arrayTypePredicate) => {
+  return Array.from({ length: arrayTypePredicate.length / 2}, (_, i) => i * 2)
+    .map(keyIndex => [ arrayTypePredicate[keyIndex], arrayTypePredicate[keyIndex + 1] ])
+    .every(([key, value]) => obj[key] === value);
 }
 
 /**
