@@ -125,9 +125,9 @@ const differenceByWithPropertyIteratee = (array, values, iteratee) => {
  */
 const differenceByWithFunctionIteratee = (array, values, iterateeFn) => {
   return array.filter(element => {
-    return iterateeFn(element) &&
-      [...values.flat()].filter(val => iterateeFn(val)).length === 0;
-  })
+    return ![...values.flat()].map(v => iterateeFn(v))
+      .includes(iterateeFn(element));
+  });
 }
 
 /**
