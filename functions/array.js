@@ -1,3 +1,5 @@
+const { values } = require("lodash");
+
 /**
  * According to the lodash documentation, _.difference(array, [values]) creates an array of array values
  * not included in the other given arrays using SameValueZero for equality comparisons.
@@ -186,10 +188,25 @@ const isSimilar = (val1, val2) => {
  */
 const compact = (array) => array.filter(Boolean);
 
+/**
+ * Creates a new array concatenating array with any additional arrays and/or values.
+ * _.concat(array, [values]), https://lodash.com/docs/4.17.15#concat
+ *
+ * @param {Array} array - The array to concatenate.
+ * @param  {...*} values - The values to concatenate.
+ * @return {Array} - Returns the new concatenated array.
+ */
+const concat = (array, ...values) => {
+  return values.reduce((acc, val) => {
+    return Array.isArray(val) ? [...acc, ...val] : [...acc, val];
+  }, array);
+}
+
 module.exports = {
   pull,
   drop,
   chunk,
+  concat,
   compact,
   dropWhile,
   difference,
