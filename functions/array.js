@@ -176,10 +176,21 @@ const isSimilar = (val1, val2) => {
     val1 === val2;
 }
 
+/**
+ * Creates an array with all falsey values removed.
+ * The values false, null, 0, "", undefined, and NaN are falsey.
+ * _.compact(array), https://lodash.com/docs/4.17.15#compact
+ *
+ * @param {Array} array - The array to compact
+ * @return {Array} - The new array of filtered values.
+ */
+const compact = (array) => array.filter(Boolean);
+
 module.exports = {
   pull,
   drop,
   chunk,
+  compact,
   dropWhile,
   difference,
   differenceBy,
