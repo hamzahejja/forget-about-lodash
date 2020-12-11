@@ -1,5 +1,5 @@
 const _find = require('lodash/find');
-const { find } = require('../index');
+const { find } = require('../functions/collection');
 
 const users = [
   { 'user': 'barney',  'age': 36, 'active': true },

@@ -1,5 +1,5 @@
 const _get = require('lodash/get');
-const { get } = require('../index');
+const { get } = require('../functions/object');
 
 describe('_.get(obj, path, defaultValue) Test Suite', () => {
   it('It Should Match Result with _.get for String path', () => {
