@@ -233,13 +233,33 @@ const differenceWith = (array, ...values) => {
  */
 const uniq = array => [...new Set(array)];
 
+/**
+ * Gets all but the first element of array.
+ * https://lodash.com/docs/4.17.15#tail _.tail(array)
+ *
+ * @param {Array} array - The array to query.
+ * @return {Array}
+ */
+const tail = array => array.slice(1);
+
+/**
+ * this method returns an object composed from key-value pairs.
+ * https://lodash.com/docs/4.17.15#fromPairs ._fromPairs(pairs)
+ *
+ * @param {Array} pairs - The key-value pairs
+ * @return {object}
+ */
+const fromPairs = pairs => pairs.reduce((obj, [key, value]) => ({...obj, [key]: value}), {});
+
 module.exports = {
+  tail,
   uniq,
   pull,
   drop,
   chunk,
   concat,
   compact,
+  fromPairs,
   dropWhile,
   difference,
   differenceBy,
