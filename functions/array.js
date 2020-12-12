@@ -212,9 +212,9 @@ const concat = (array, ...values) => {
  * @return {Array
  */
 const differenceWith = (array, ...values) => {
-  const comparator = values.pop();
-  console.log(comparator);
-  return array.filter(element => ![...values.flat()].some(val => comparator(element, val)));
+  const [comparator, ...excludedValues] = values.reverse();
+
+  return array.filter(element => ![...excludedValues.flat()].some(excludedVal => comparator(element, excludedVal)));
 }
 
 module.exports = {
