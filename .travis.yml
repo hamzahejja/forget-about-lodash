@@ -8,8 +8,6 @@ node_js:
 branches:
   only:
     - master
-before_install:
-  - npm update
 install:
  - npm install
 script:
