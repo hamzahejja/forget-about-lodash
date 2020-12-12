@@ -217,7 +217,19 @@ const differenceWith = (array, ...values) => {
   return array.filter(element => ![...excludedValues.flat()].some(excludedVal => comparator(element, excludedVal)));
 }
 
+/**
+ * Creates a duplicate-free version of an array, using SameValueZero for equality comparisons,
+ * in which only the first occurrence of each element is kept. The order of result values
+ * is determined by the order they occur in the array.
+ *  _.uniq(array) https://lodash.com/docs/4.17.15#uniq
+ *
+ * @param {Array} array
+ * @return {Array}
+ */
+const uniq = array => [...new Set(array)];
+
 module.exports = {
+  uniq,
   pull,
   drop,
   chunk,
