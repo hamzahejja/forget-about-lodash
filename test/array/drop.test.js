@@ -1,5 +1,5 @@
 const _drop = require('lodash/drop');
-const { drop } = require('../functions/array');
+const { drop } = require('../../functions/array');
 
 const inputArr = [1, 2, 3];
 

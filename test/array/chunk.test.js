@@ -1,4 +1,4 @@
-const { chunk } = require('../functions/array');
+const { chunk } = require('../../functions/array');
 const _chunk = require('lodash/chunk');
 
 const inputArr = [1, 2, 3, 4, 5, 6, 7, 8];

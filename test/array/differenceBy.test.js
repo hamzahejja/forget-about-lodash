@@ -1,5 +1,5 @@
 const _differenceBy = require('lodash/differenceBy');
-const { differenceBy } = require('../functions/array');
+const { differenceBy } = require('../../functions/array');
 
 describe('_.differenceBy(array, [values], [iteratee=_.identity])', () => {
   it('It Should Match Result with _.differenceBy for Function Iteratee', () => {

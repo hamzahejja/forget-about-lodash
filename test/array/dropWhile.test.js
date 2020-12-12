@@ -1,5 +1,5 @@
 const _dropWhile = require('lodash/dropWhile');
-const { dropWhile } = require('../functions/array');
+const { dropWhile } = require('../../functions/array');
 
 const inputArr = [
   { 'user': 'barney',  'active': false },
