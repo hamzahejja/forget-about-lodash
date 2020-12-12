@@ -8,7 +8,7 @@
  * @return {Array} - Returns the new array of filtered values
  */
 const difference = (array, ...arrays) => {
-	const excludedValues = arrays.flat();
+	const excludedValues = arrays.reduce((acc, arr) => acc.concat(arr), []);
   return array.filter(val => ! excludedValues.includes(val));
 }
 
@@ -111,7 +111,8 @@ const differenceBy = (array, ...values) => {
  */
 const differenceByWithPropertyIteratee = (array, values, iteratee) => {
   return array.filter(element => {
-    return ![...values.flat()].some(o => o[iteratee] === element[iteratee]);
+    return !values.reduce((acc, excludedVal) => acc.concat(excludedVal), [])
+      .some(o => o[iteratee] === element[iteratee]);
   });
 }
 
@@ -125,7 +126,8 @@ const differenceByWithPropertyIteratee = (array, values, iteratee) => {
  */
 const differenceByWithFunctionIteratee = (array, values, iterateeFn) => {
   return array.filter(element => {
-    return ![...values.flat()].map(v => iterateeFn(v))
+    return !values.reduce((acc, excludedVal) => acc.concat(excludedVal), [])
+      .map(v => iterateeFn(v))
       .includes(iterateeFn(element));
   });
 }
@@ -214,7 +216,10 @@ const concat = (array, ...values) => {
 const differenceWith = (array, ...values) => {
   const [comparator, ...excludedValues] = values.reverse();
 
-  return array.filter(element => ![...excludedValues.flat()].some(excludedVal => comparator(element, excludedVal)));
+  return array.filter(element => {
+    return !excludedValues.reduce((acc, excludedVal) => acc.concat(excludedVal), [])
+      .some(excludedVal => comparator(element, excludedVal));
+  });
 }
 
 /**
