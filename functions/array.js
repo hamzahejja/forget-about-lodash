@@ -1,5 +1,3 @@
-const { values } = require("lodash");
-
 /**
  * According to the lodash documentation, _.difference(array, [values]) creates an array of array values
  * not included in the other given arrays using SameValueZero for equality comparisons.
@@ -202,6 +200,23 @@ const concat = (array, ...values) => {
   }, array);
 }
 
+/**
+ * This method is like _.difference except that it accepts comparator which is invoked 
+ * to compare elements of array to values. The order and references of result values are
+ * determined by the first array. The comparator is invoked with two arguments: (arrVal, othVal).
+ * https://lodash.com/docs/4.17.15#differenceWith _.differenceWith(array, [values], [comparator])
+
+ * @param {Array} array - The array to inspect
+ * @param  {...Array} values - The values to exclude
+ * @param {Function} comparator - The comparator invoked for each element.
+ * @return {Array
+ */
+const differenceWith = (array, ...values) => {
+  const comparator = values.pop();
+  console.log(comparator);
+  return array.filter(element => ![...values.flat()].some(val => comparator(element, val)));
+}
+
 module.exports = {
   pull,
   drop,
@@ -211,5 +226,6 @@ module.exports = {
   dropWhile,
   difference,
   differenceBy,
-  intersection
+  intersection,
+  differenceWith,
 }
