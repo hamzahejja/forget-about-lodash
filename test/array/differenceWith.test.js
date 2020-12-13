@@ -1,6 +1,5 @@
 const _differenceWith = require('lodash/differenceWith');
-const { differenceWith } = require('../../functions/array');
-const { difference } = require('lodash');
+const { differenceWith } = require('../../src/functions/array');
 
 describe('_.differenceWith(array, [values], [comparator])', () => {
   it('It Should Match Result with _.differenceWith with Equality Comparator', () => {

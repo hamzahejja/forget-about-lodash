@@ -1,5 +1,5 @@
 const _uniq = require('lodash/uniq');
-const { uniq } = require('../../functions/array');
+const { uniq } = require('../../src/functions/array');
 
 describe('_.uniq(array)', () => {
   it('It Should Match _.uniq and Give Unique/Duplicate-Free Array Elements', () => {

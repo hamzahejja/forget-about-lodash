@@ -1,5 +1,5 @@
 const _dropRightWhile = require('lodash/dropRightWhile');
-const { dropRightWhile } = require('../../functions/array');
+const { dropRightWhile } = require('../../src/functions/array');
 
 const users = [
   { 'user': 'barney',  'active': true },

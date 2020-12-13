@@ -1,5 +1,5 @@
 const _fromPairs = require('lodash/fromPairs');
-const { fromPairs } = require('../../functions/array');
+const { fromPairs } = require('../../src/functions/array');
 
 describe('_.fromPairs(pairs)', () => {
   it('It Should Match Result with _.fromPairs', () => {

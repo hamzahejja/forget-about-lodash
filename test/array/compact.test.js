@@ -1,5 +1,5 @@
 const _compact = require('lodash/compact');
-const { compact } = require('../../functions/array');
+const { compact } = require('../../src/functions/array');
 
 describe('_.compact(array): creates new array with all falsey values removed.', () => {
   it('It Should Match Result with _.compact.', () => {

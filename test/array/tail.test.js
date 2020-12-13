@@ -1,5 +1,5 @@
 const _tail = require('lodash/tail');
-const { tail } = require('../../functions/array');
+const { tail } = require('../../src/functions/array');
 
 describe('_.tail(array) - gets all but the first element of an array', () => {
   it('It Should Match Result with _.tail for array of primitives [pure/mixed]', () => {

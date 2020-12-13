@@ -1,5 +1,5 @@
 const _difference = require('lodash/difference');
-const { difference } = require('../../functions/array');
+const { difference } = require('../../src/functions/array');
 
 describe('_.difference(array, [values])', () => {
   it('It Should Match Result with _.difference for number array', () => {
