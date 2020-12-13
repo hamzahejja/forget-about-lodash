@@ -83,6 +83,57 @@ const buildArrayTypePredicate = (obj, arrayTypePredicate) => {
 const drop = (arr, val = 1) => arr.slice(val);
 
 /**
+ * Creates a slice of array with n elements dropped from the end.
+ * https://lodash.com/docs/4.17.15#dropRight _.dropRight(array, [n = 1])
+ *
+ * @param {Array} array - The array to query.
+ * @param {number} n - The number of elements to drop
+ * @return {Array} - returns the slice of the array.
+ */
+const dropRight = (array, n = 1) => n > array.length ? [] : array.slice(0, array.length - n);
+
+/**
+ * Creates a slice of array excluding elements dropped from the end.
+ * Elements are dropped until predicate returns falsey. The predicate is invoked
+ * with three arguments: (value, index, array).
+ *
+ * @param {Array} array - The array to query.
+ * @param {object|function|string} predicate - The function invoked per iteration.
+ * @return {Array}
+ */
+const dropRightWhile = (array, predicate) => {
+  let numberOfDroppedElements = 0;
+
+  for (element of [...array].reverse()) {
+    if (!isDropPredicateFulfilled(element, predicate)) {
+      break;
+    }
+
+    numberOfDroppedElements++;
+  }
+
+  return numberOfDroppedElements > array.length ? [] : array.slice(0, array.length - numberOfDroppedElements);
+}
+
+const isDropPredicateFulfilled = (element, predicate) => {
+  if (typeof(predicate) === 'function') {
+    return predicate(element);
+  }
+
+  if (typeof(predicate) === 'string') {
+    return Boolean(element[predicate]);
+  }
+
+  if (Array.isArray(predicate)) {
+    return Array.from({length: predicate.length / 2}, (_, i) => i * 2)
+      .map(key => [predicate[key], predicate[key + 1]])
+      .every(([key, value]) => element[key] === value);
+  }
+
+  return Object.entries(predicate).every(([key, value]) => element[key] === value);
+}
+
+/**
  * According to the lodash documentation,
  *  _.differenceBy is like _.difference except that it accepts iteratee which is invoked for each element of array and
  * values to generate the criterion by which they're compared. The order and references of result values are determined
@@ -261,8 +312,10 @@ module.exports = {
   compact,
   fromPairs,
   dropWhile,
+  dropRight,
   difference,
   differenceBy,
   intersection,
   differenceWith,
+  dropRightWhile,
 }
