@@ -327,6 +327,30 @@ const tail = array => array.slice(1);
  */
 const fromPairs = pairs => pairs.reduce((obj, [key, value]) => ({...obj, [key]: value}), {});
 
+/**
+ * Flattens array a single level deep.
+ * _flatten(array); https://lodash.com/docs/4.17.15#flatten
+ *
+ * @param {Array} array - The array to flatten.
+ * @return {Array} - returns the new flattened array.
+ */
+const flatten = (array) => array.reduce((acc, val) => acc.concat(val), []);
+
+/**
+ * Recursively flattens array.
+ * _.flattenDeep(array); https://lodash.com/docs/4.17.15#flatten
+ *
+ * @param {Array} array - The array to flatten.
+ * @return {Array} - returns the new flattened array.
+ */
+const flattenDeep = (array) => {
+  return array.reduce((acc, val) => {
+    return Array.isArray(val) ?
+      acc.concat(flattenDeep(val)):
+      [...acc, val];
+  }, []);
+}
+
 module.exports = {
   tail,
   uniq,
@@ -335,6 +359,8 @@ module.exports = {
   chunk,
   concat,
   compact,
+  flatten,
+  flattenDeep,
   fromPairs,
   dropWhile,
   dropRight,
