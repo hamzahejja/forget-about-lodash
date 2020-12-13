@@ -3,3 +3,7 @@ node_modules/
 
 # Optional npm cache directory
 .npm
+
+# coverage directory generated from Jest
+coverage
+*.lcov

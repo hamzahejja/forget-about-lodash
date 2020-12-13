@@ -6,7 +6,11 @@ node_js:
 branches:
   only:
     - master
+before_install:
+  - pip install --user codecov
 install:
- - npm install
+  - npm install
 script:
   - npm test
+after_success:
+  - codecov --file coverage/lcov.info --disable search
