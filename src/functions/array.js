@@ -18,6 +18,7 @@ const difference = (array, ...arrays) => {
  * Note that unlike _.without, this method mutates array.
  * @param {Array} arr
  * @param  {...any} args
+ * @return {Array}
  */
 const pull = (arr, ...args) => {
   let index = 0;
@@ -42,6 +43,7 @@ const pull = (arr, ...args) => {
  *
  * @param {Array} arr
  * @param {function|object} fn
+ * @return {Array}
  */
 const dropWhile = (arr, fn) => {
   if (typeof(fn) === 'function') {
@@ -61,11 +63,21 @@ const dropWhile = (arr, fn) => {
  *
  * @param {object} obj
  * @param {object} predicateFn
+ * @return {boolean}
  */
 const buildObjectLikePredicate = (obj, predicateFn) => {
   return Object.entries(predicateFn).every(([key, value]) => obj[key] === value);
 }
 
+/**
+ * Build condition with array-like predicate,
+ * instead of passing a function as predicate for dropWhile.
+ * uses `_.matchesProperty` iteratee shorthand.
+ *
+ * @param {object} obj
+ * @param {Array} predicateFn
+ * @return {boolean}
+ */
 const buildArrayTypePredicate = (obj, arrayTypePredicate) => {
   return Array.from({ length: arrayTypePredicate.length / 2}, (_, i) => i * 2)
     .map(keyIndex => [ arrayTypePredicate[keyIndex], arrayTypePredicate[keyIndex + 1] ])
@@ -115,6 +127,17 @@ const dropRightWhile = (array, predicate) => {
   return numberOfDroppedElements > array.length ? [] : array.slice(0, array.length - numberOfDroppedElements);
 }
 
+/**
+ * Evaluates the predicate per element
+ * predicate may be: `_.identity` (Function)
+ * or `_.matches` (Object-Like)
+ * or `_.matchesProperty` (Array-Like)
+ * or `_.property` (string, property)
+ *
+ * @param {*} element
+ * @param {function|object|string} predicate
+ * @return {boolean}
+ */
 const isDropPredicateFulfilled = (element, predicate) => {
   if (typeof(predicate) === 'function') {
     return predicate(element);
@@ -154,6 +177,7 @@ const differenceBy = (array, ...values) => {
 
 /**
  * differenceBy with value/property iteratee.
+ * `_.property` iteratee shorthand.
  *
  * @param {Array} array - The array to inspect
  * @param {Array} values - the number of arrays containing values to exclude.
@@ -169,6 +193,7 @@ const differenceByWithPropertyIteratee = (array, values, iteratee) => {
 
 /**
  * differenceBy with function iteratee.
+ * `_.identity` iteratee shorthand.
  *
  * @param {Array} array - The array to inspect
  * @param {Array} values - the number of arrays containing values to exclude.

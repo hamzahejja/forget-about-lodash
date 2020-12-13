@@ -5,7 +5,7 @@
  *
  * @param {Object} obj - The object to query
  * @param {String|Array} path - The path of the property to get.
- * @param {*} value - The value returned for undefined resolved values.
+ * @param {*} defaultValue - The value returned for undefined resolved values.
  * @return {*} - The resolved value
  */
 function get(obj, path, defaultValue) {
