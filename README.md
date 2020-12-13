@@ -2,7 +2,7 @@
 [![Inline docs](http://inch-ci.org/github/hamzahejja/lodash-recreated.svg?branch=master)](http://inch-ci.org/github/hamzahejja/lodash-recreated)
 [![Build Status](https://travis-ci.org/hamzahejja/lodash-recreated.svg?branch=master)](https://travis-ci.org/hamzahejja/lodash-recreated)
 [![codecov](https://codecov.io/gh/hamzahejja/lodash-recreated/branch/master/graph/badge.svg?token=RF0GRWWMTW)](https://codecov.io/gh/hamzahejja/lodash-recreated)
-https://img.shields.io/badge/Contributions-Welcome-informational
+[![contributions](https://img.shields.io/badge/Contributions-Welcome-informational)](https://img.shields.io/badge/Contributions-Welcome-informational)
 
 
 __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library [Lodash](https://lodash.com/) with `Array`, `Object`, `Collection`, `Util` and `Lang` utility methods, along with unit-tests written for each of the implemented methods.
