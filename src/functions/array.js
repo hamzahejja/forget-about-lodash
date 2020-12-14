@@ -366,7 +366,19 @@ const flattenDepth = (array, depth = 1) => {
   return flattenDepth(array.reduce((acc, val) => acc.concat(val), []), depth - 1);
 }
 
+/**
+ * Gets the element at index n of array.
+ * If n is negative, the nth element from the end is returned.
+ * _.nth(array, [n=0]); https://lodash.com/docs/4.17.15#nth
+ *
+ * @param {Array} array - The array to query.
+ * @param {number} n - The index of the element to return.
+ * @return {*} - Returns the nth element of the array.
+ */
+const nth = (array, n = 0) => n < 0 ? array[array.length + n] : array[n];
+
 module.exports = {
+  nth,
   tail,
   uniq,
   pull,

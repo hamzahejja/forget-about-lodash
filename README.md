@@ -76,6 +76,11 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
    > Write a function that creates an array of values found within all given arrays.<br>
    The first array will serve as the base from which the remaining arrays will be checked to see if they have the matching values.<br>
    https://lodash.com/docs/4.17.15#intersection
+
+   + __nth(array, [n=0])__
+   > Gets the element at index n of array.<br>
+   If n is negative, the nth element from the end is returned.<br>
+   [_.nth(array, [n=0])](https://lodash.com/docs/4.17.15#nth)
    
    + __pull(array, [values])__
    > Removes all given values from array using SameValueZero for equality comparisons.<br>
