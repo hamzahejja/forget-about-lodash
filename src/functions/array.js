@@ -351,6 +351,21 @@ const flattenDeep = (array) => {
   }, []);
 }
 
+/**
+ * Recursively flatten array up to depth times.
+ * _.flattenDepth(array, [depth=1]); https://lodash.com/docs/4.17.15#flattenDepth
+ *
+ * @param {Array} array - The array to flatten.
+ * @param {Number} depth - The maximum recursion depth.
+ */
+const flattenDepth = (array, depth = 1) => {
+  if (depth === 1) {
+    return array.reduce((acc, val) => acc.concat(val), []);
+  }
+
+  return flattenDepth(array.reduce((acc, val) => acc.concat(val), []), depth - 1);
+}
+
 module.exports = {
   tail,
   uniq,
@@ -361,6 +376,7 @@ module.exports = {
   compact,
   flatten,
   flattenDeep,
+  flattenDepth,
   fromPairs,
   dropWhile,
   dropRight,

@@ -63,6 +63,10 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
    + __flattenDeep(array)__
    > Recursively flattens array.<br>
    https://lodash.com/docs/4.17.15#flattenDeep
+
+   + __flattenDepth(array, [depth = 1])__
+   > Recursively flatten array up to depth times.<br>
+   [_.flattenDepth(array, [depth=1])](https://lodash.com/docs/4.17.15#flattenDepth)
    
    + __fromPairs(pairs)__
    > this method returns an object composed from key-value pairs(arrays).<br>
