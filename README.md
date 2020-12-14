@@ -1,10 +1,11 @@
-# lodash-recreated
-[![Inline docs](http://inch-ci.org/github/hamzahejja/lodash-recreated.svg?branch=master)](http://inch-ci.org/github/hamzahejja/lodash-recreated)
-[![Build Status](https://travis-ci.org/hamzahejja/lodash-recreated.svg?branch=master)](https://travis-ci.org/hamzahejja/lodash-recreated)
-[![codecov](https://codecov.io/gh/hamzahejja/lodash-recreated/branch/master/graph/badge.svg?token=RF0GRWWMTW)](https://codecov.io/gh/hamzahejja/lodash-recreated)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![contributions](https://img.shields.io/badge/Contributions-Welcome-informational)](https://img.shields.io/badge/Contributions-Welcome-informational)
+<p align="center"><a href="https://github.com/hamzahejja/lodash-recreated" target="_blank"><img src="https://raw.githubusercontent.com/hamzahejja/lodash-recreated/master/LODASH_RECREATED_LOGO.png" width="600" alt="Lodash Recreated"></a></p>
 
+<p align="center">
+   <a href="http://inch-ci.org/github/hamzahejja/lodash-recreated"><img src="http://inch-ci.org/github/hamzahejja/lodash-recreated.svg?branch=master" alt="Documentation"></a>
+   <a href="https://travis-ci.org/hamzahejja/lodash-recreated"><img src="https://travis-ci.org/hamzahejja/lodash-recreated.svg?branch=master" alt="Build Status"></a>
+   <a href="https://codecov.io/gh/hamzahejja/lodash-recreated"><img src="https://codecov.io/gh/hamzahejja/lodash-recreated/branch/master/graph/badge.svg?token=RF0GRWWMTW" alt="Code Coverage"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
+   <a href="https://img.shields.io/badge/Contributions-Welcome-informational"><img src="https://img.shields.io/badge/Contributions-Welcome-informational" alt="Contributions"></a>
 
 __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library [Lodash](https://lodash.com/) with `Array`, `Object`, `Collection`, `Util` and `Lang` utility methods, along with unit-tests written for each of the implemented methods.
 
