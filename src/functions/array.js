@@ -338,7 +338,7 @@ const flatten = (array) => array.reduce((acc, val) => acc.concat(val), []);
 
 /**
  * Recursively flattens array.
- * _.flattenDeep(array); https://lodash.com/docs/4.17.15#flatten
+ * _.flattenDeep(array); https://lodash.com/docs/4.17.15#flattenDeep
  *
  * @param {Array} array - The array to flatten.
  * @return {Array} - returns the new flattened array.

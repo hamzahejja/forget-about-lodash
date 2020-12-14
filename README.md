@@ -2,6 +2,7 @@
 [![Inline docs](http://inch-ci.org/github/hamzahejja/lodash-recreated.svg?branch=master)](http://inch-ci.org/github/hamzahejja/lodash-recreated)
 [![Build Status](https://travis-ci.org/hamzahejja/lodash-recreated.svg?branch=master)](https://travis-ci.org/hamzahejja/lodash-recreated)
 [![codecov](https://codecov.io/gh/hamzahejja/lodash-recreated/branch/master/graph/badge.svg?token=RF0GRWWMTW)](https://codecov.io/gh/hamzahejja/lodash-recreated)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![contributions](https://img.shields.io/badge/Contributions-Welcome-informational)](https://img.shields.io/badge/Contributions-Welcome-informational)
 
 
