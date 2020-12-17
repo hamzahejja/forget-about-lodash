@@ -27,6 +27,29 @@ function get(obj, path, defaultValue) {
   return resolvedValue;
 }
 
+/**
+ * Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
+ * The order of grouped values is determined by the order they occur in collection.
+ * The corresponding value of each key is an array of elements responsible for generating the key.
+ * The iteratee is invoked with one argument: (value).
+ *
+ * @param {Array|Object} collection
+ * @param {Function|String|Number} iteratee
+ * @returns {Object}
+ */
+function groupBy(collection, iteratee) {
+  const values = Array.isArray(collection) ? collection : Object.values(collection);
+
+  return values.reduce((obj, val) => {
+    const key = typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
+    return {
+      ...obj,
+      [key]: [...(obj[key] || []), val]
+    };
+  }, {});
+}
+
 module.exports = {
   get,
+  groupBy
 }
