@@ -1,4 +1,3 @@
-const assert = require('assert');
 const _groupBy = require('lodash/groupBy');
 const { groupBy } = require('../../src/functions/object');
 

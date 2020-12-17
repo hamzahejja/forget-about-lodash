@@ -38,10 +38,11 @@ function get(obj, path, defaultValue) {
  * @returns {Object}
  */
 function groupBy(collection, iteratee) {
-  const values = Array.isArray(collection) ? collection : Object.values(collection);
+  return Object.values(collection).reduce((obj, val) => {
+    const key = typeof(iteratee) === 'object'
+    ? Object.entries(iteratee).every(([k, v]) => val[k] === v)
+    : typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
 
-  return values.reduce((obj, val) => {
-    const key = typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
     return {
       ...obj,
       [key]: [...(obj[key] || []), val]
@@ -49,7 +50,26 @@ function groupBy(collection, iteratee) {
   }, {});
 }
 
+/**
+ * Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
+ * The corresponding value of each key is the number of times the key was returned by iteratee.
+ * The iteratee is invoked with one argument: (value).
+ *
+ * @param {Array|Object} collection
+ * @param {Function|String|Number} iteratee
+ */
+function countBy(collection, iteratee) {
+  return Object.values(collection).reduce((obj, val) => {
+    const key = typeof(iteratee) === 'object'
+    ? Object.entries(iteratee).every(([k, v]) => val[k] === v)
+    : typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
+
+    return { ...obj, [key]: (obj[key] || 0) + 1 };
+  }, {});
+}
+
 module.exports = {
   get,
-  groupBy
+  groupBy,
+  countBy
 }
