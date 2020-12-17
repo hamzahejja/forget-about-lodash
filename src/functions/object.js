@@ -39,14 +39,8 @@ function get(obj, path, defaultValue) {
  */
 function groupBy(collection, iteratee) {
   return Object.values(collection).reduce((obj, val) => {
-    const key = typeof(iteratee) === 'object'
-    ? Object.entries(iteratee).every(([k, v]) => val[k] === v)
-    : typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
-
-    return {
-      ...obj,
-      [key]: [...(obj[key] || []), val]
-    };
+    const key = (typeof(iteratee) === 'function') ? iteratee(val) : val[iteratee];
+    return { ...obj, [key]: [...(obj[key] || []), val]};
   }, {});
 }
 
@@ -60,9 +54,7 @@ function groupBy(collection, iteratee) {
  */
 function countBy(collection, iteratee) {
   return Object.values(collection).reduce((obj, val) => {
-    const key = typeof(iteratee) === 'object'
-    ? Object.entries(iteratee).every(([k, v]) => val[k] === v)
-    : typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
+    const key = typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
 
     return { ...obj, [key]: (obj[key] || 0) + 1 };
   }, {});
