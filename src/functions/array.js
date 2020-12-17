@@ -124,7 +124,7 @@ const dropRightWhile = (array, predicate) => {
     numberOfDroppedElements++;
   }
 
-  return numberOfDroppedElements > array.length ? [] : array.slice(0, array.length - numberOfDroppedElements);
+  return array.slice(0, array.length - numberOfDroppedElements);
 }
 
 /**
@@ -237,9 +237,11 @@ const chunk = (array, size = 1) => {
 const intersection = (...a) => {
   const [baseArray, ...remainingArrays] = a;
 
-  return baseArray.filter(element => {
+  const common = baseArray.filter(element => {
     return remainingArrays.every(subArr => subArr.some(subElement => isSimilar(element, subElement)));
-  })
+  });
+
+  return [...new Set(common)];
 }
 
 /**
@@ -248,11 +250,7 @@ const intersection = (...a) => {
  * @param {any} val1
  * @param {any} val2
  */
-const isSimilar = (val1, val2) => {
-  return typeof(val1 === 'object' && typeof(val2) === 'object') ?
-    JSON.stringify(val1) === JSON.stringify(val2):
-    val1 === val2;
-}
+const isSimilar = (val1, val2) => JSON.stringify(val1) === JSON.stringify(val2);
 
 /**
  * Creates an array with all falsey values removed.

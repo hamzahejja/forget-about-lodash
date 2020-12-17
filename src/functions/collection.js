@@ -10,16 +10,16 @@
  * @return {object}
  */
 const find = (collection, predicate, startIndex = 0) => {
-  const searchCollection = Array.isArray(collection) ? collection : Object.values(collection);
+  collection = Object.values(collection);
 
   if (typeof(predicate) === 'object') {
     return Array.isArray(predicate) ?
-      findByArrayLikePredicate(searchCollection, predicate, startIndex):
-      findByObjectLikePredicate(searchCollection, predicate, startIndex);
+      findByArrayLikePredicate(collection, predicate, startIndex):
+      findByObjectLikePredicate(collection, predicate, startIndex);
   } else if (typeof(predicate) === 'function') {
-    return findByFunctionPredicate(searchCollection, predicate, startIndex);
+    return findByFunctionPredicate(collection, predicate, startIndex);
   } else {
-    return findByStringLikePredicate(searchCollection, predicate, startIndex);
+    return findByStringLikePredicate(collection, predicate, startIndex);
   }
 }
 
@@ -34,9 +34,7 @@ const find = (collection, predicate, startIndex = 0) => {
  * @return {object}
  */
 const findByFunctionPredicate = (collection, predicate, startIndex) => {
-  return Array.isArray(collection) ?
-    collection.slice(startIndex).filter(predicate)[0]:
-    Object.values(collection).slice(startIndex).filter(predicate)[0];
+  return collection.slice(startIndex).filter(predicate)[0];
 }
 
 /**
