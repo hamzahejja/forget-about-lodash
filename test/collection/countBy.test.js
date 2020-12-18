@@ -1,6 +1,6 @@
 const assert = require('assert');
 const _countBy = require('lodash/countBy');
-const { countBy } = require('../../src/functions/object');
+const { countBy } = require('../../src/functions/collection');
 
 describe('countBy(collection, iteratee)', () => {
   it('Should Transform Keys with Function `_.identity` Iteratee', () => {

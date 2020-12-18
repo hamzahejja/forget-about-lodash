@@ -1,5 +1,5 @@
 const _groupBy = require('lodash/groupBy');
-const { groupBy } = require('../../src/functions/object');
+const { groupBy } = require('../../src/functions/collection');
 
 describe('groupBy(collection, [iteratee=_.identity]', () => {
   it('Should Transform Keys by function `_.idetnity` iteratee', () => {
