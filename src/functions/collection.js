@@ -135,6 +135,7 @@ function countBy(collection, iteratee) {
  *
  * @param {Array|Object} collection
  * @param {Function|Object|Array|String} predicate
+ * @returns {Boolean}
  */
 function every(collection, predicate) {
   let flag = true;
@@ -168,9 +169,48 @@ function every(collection, predicate) {
   return flag;
 }
 
+/**
+ * Invokes the method at path of each element in collection, returning an array of the results of each invoked method.
+ * Any additional arguments are provided to each invoked method. If path is a function,
+ * it's invoked for, and this bound to, each element in collection.
+ *
+ * @param {Array|Object} collection
+ * @param {Function|String} path
+ * @param  {...*} args
+ * @returns {Array}
+ */
+function invokeMap(collection, path, ...args) {
+  const values = Object.values(collection);
+
+  return typeof(path) === 'string' ?
+    values.map(e => e[path](...args)):
+    values.map(e => path.apply(e, args));
+}
+
+/**
+ * Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
+ * The corresponding value of each key is the last element responsible for generating the key.
+ * The iteratee is invoked with one argument: (value).
+ *
+ * @param {Array|object} collection
+ * @param {Function|string} iteratee
+ * @return {object}
+ */
+function keyBy(collection, iteratee) {
+  return Object.values(collection).reduce((obj, val) => {
+    const generatedKey = typeof(iteratee) === 'function'
+    ? iteratee(val)
+    : val[iteratee];
+
+    return { ...obj, [generatedKey]: JSON.parse(JSON.stringify(val)) };
+  }, {});
+}
+
 module.exports = {
   find,
   every,
+  keyBy,
   groupBy,
   countBy,
+  invokeMap,
 }
