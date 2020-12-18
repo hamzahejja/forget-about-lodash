@@ -135,10 +135,6 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
     The iteratee is invoked with one argument: (value).<br>
     https://lodash.com/docs/4.17.15#keyBy
 
-
-
-
-
 ## Running Tests
 The projects uses [Jest](https://jestjs.io/en/) JavaScript Testing Framework. to run all tests, all you have to do is run the command:
 
