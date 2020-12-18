@@ -94,6 +94,83 @@ const findByStringLikePredicate = (collection, predicate, startIndex) => {
   return collection.slice(startIndex).filter(o => o[predicate])[0];
 }
 
+
+/**
+ * Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
+ * The order of grouped values is determined by the order they occur in collection.
+ * The corresponding value of each key is an array of elements responsible for generating the key.
+ * The iteratee is invoked with one argument: (value).
+ *
+ * @param {Array|Object} collection
+ * @param {Function|String|Number} iteratee
+ * @returns {Object}
+ */
+function groupBy(collection, iteratee) {
+  return Object.values(collection).reduce((obj, val) => {
+    const key = (typeof(iteratee) === 'function') ? iteratee(val) : val[iteratee];
+    return { ...obj, [key]: [...(obj[key] || []), val]};
+  }, {});
+}
+
+/**
+ * Creates an object composed of keys generated from the results of running each element of collection thru iteratee.
+ * The corresponding value of each key is the number of times the key was returned by iteratee.
+ * The iteratee is invoked with one argument: (value).
+ *
+ * @param {Array|Object} collection
+ * @param {Function|String|Number} iteratee
+ */
+function countBy(collection, iteratee) {
+  return Object.values(collection).reduce((obj, val) => {
+    const key = typeof(iteratee) === 'function' ? iteratee(val) : val[iteratee];
+
+    return { ...obj, [key]: (obj[key] || 0) + 1 };
+  }, {});
+}
+
+/**
+ * Checks if predicate returns truthy for all elements of collection.
+ * Iteration is stopped once predicate returns falsey.
+ * The predicate is invoked with three arguments: (value, index|key, collection).
+ *
+ * @param {Array|Object} collection
+ * @param {Function|Object|Array|String} predicate
+ */
+function every(collection, predicate) {
+  let flag = true;
+
+  for (value of collection) {
+    if (typeof(predicate) === 'function') {
+      flag = flag && Boolean(predicate(value));
+    }
+
+    if (typeof(predicate) === 'object') {
+      let condition;
+
+      if (Array.isArray(predicate)) {
+        condition = Array.from({ length: predicate.length / 2}, (_, i) => i * 2)
+          .map(keyIndex => [predicate[keyIndex], predicate[keyIndex + 1]])
+          .every(([k, v]) => value[k] === v)
+      } else {
+        condition = Object.entries(predicate).every(([k, v]) => value[k] === v);
+      }
+
+      flag = flag && condition;
+    }
+
+    if (typeof(predicate) === 'string') {
+      flag = flag && Boolean(value[predicate]);
+    }
+
+    if (! flag) break;
+  }
+
+  return flag;
+}
+
 module.exports = {
-  find
+  find,
+  every,
+  groupBy,
+  countBy,
 }
