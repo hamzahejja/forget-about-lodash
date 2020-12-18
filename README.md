@@ -2,7 +2,7 @@
 
 <p align="center">
    <a href="http://inch-ci.org/github/hamzahejja/lodash-recreated"><img src="http://inch-ci.org/github/hamzahejja/lodash-recreated.svg?branch=master" alt="Documentation"></a>
-   <a href="https://travis-ci.org/hamzahejja/lodash-recreated"><img src="https://travis-ci.org/hamzahejja/lodash-recreated.svg?branch=master" alt="Build Status"></a>
+   <a href="https://github.com/hamzahejja/lodash-recreated/actions?query=branch%3Amaster"><img src="https://github.com/hamzahejja/lodash-recreated/workflows/Build/badge.svg" alt="Build Status"></a>
    <a href="https://codecov.io/gh/hamzahejja/lodash-recreated"><img src="https://codecov.io/gh/hamzahejja/lodash-recreated/branch/master/graph/badge.svg?token=RF0GRWWMTW" alt="Code Coverage"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
    <a href="https://img.shields.io/badge/Contributions-Welcome-informational"><img src="https://img.shields.io/badge/Contributions-Welcome-informational" alt="Contributions"></a>
