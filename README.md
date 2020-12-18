@@ -113,12 +113,12 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
    The order of grouped values is determined by the order they occur in collection.<br>
    https://lodash.com/docs/4.17.15#groupBy
 
-   +__countBy(collection, [iteratee=_.identity])__
+   + __countBy(collection, [iteratee=_.identity])__
    > Creates an object composed of keys generated from the results of running each element of collection thru iteratee.<br>
     The corresponding value of each key is the number of times the key was returned by iteratee.<br>
     https://lodash.com/docs/4.17.15#countBy
 
-    +__every(collection, [predicate=_.identity])__
+    + __every(collection, [predicate=_.identity])__
     > Checks if predicate returns truthy for all elements of collection.<br>
     Iteration is stopped once predicate returns falsey <br>
     https://lodash.com/docs/4.17.15#every
