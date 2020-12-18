@@ -123,6 +123,21 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
     Iteration is stopped once predicate returns falsey <br>
     https://lodash.com/docs/4.17.15#every
 
+    + __invokeMap(collection, path, [args])__
+    > Invokes the method at path of each element in collection, returning an array of <br>
+    the results of each invoked method. Any additional arguments are provided to each invoked method.<br>. If path is a function, it's invoked for, and this bound to, each element in collection.<br>
+    https://lodash.com/docs/4.17.15#invokeMap
+
+    + __keyBy(collection, iteratee)__
+    > Creates an object composed of keys generated from the results of <br>
+    running each element of collection thru iteratee. The corresponding value of each key is <br>
+    the last element responsible for generating the key.<br>
+    The iteratee is invoked with one argument: (value).<br>
+    https://lodash.com/docs/4.17.15#keyBy
+
+
+
+
 
 ## Running Tests
 The projects uses [Jest](https://jestjs.io/en/) JavaScript Testing Framework. to run all tests, all you have to do is run the command:
