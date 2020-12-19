@@ -103,17 +103,17 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
    https://lodash.com/docs/4.17.15#get
 
 + ## Collection
-   + __find (collection, predicate, startIndex)__
+    + __find (collection, predicate, startIndex)__
    > Iterates over elements of collection, returning the first element predicate returns truthy for.<br>
    The predicate is invoked with three arguments: (value, index|key, collection).<br>
    https://lodash.com/docs/4.17.15#find
 
-   + __groupBy(collection, [iteratee=_.identity])__
+    + __groupBy(collection, [iteratee=_.identity])__
    > Creates an object composed of keys generated from the results of running each element of collection thru iteratee.<br>
    The order of grouped values is determined by the order they occur in collection.<br>
    https://lodash.com/docs/4.17.15#groupBy
 
-   + __countBy(collection, [iteratee=_.identity])__
+    + __countBy(collection, [iteratee=_.identity])__
    > Creates an object composed of keys generated from the results of running each element of collection thru iteratee.<br>
     The corresponding value of each key is the number of times the key was returned by iteratee.<br>
     https://lodash.com/docs/4.17.15#countBy
@@ -134,6 +134,24 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
     the last element responsible for generating the key.<br>
     The iteratee is invoked with one argument: (value).<br>
     https://lodash.com/docs/4.17.15#keyBy
+
++ ## Number
+    + __clamp(number, [lower], upper)__
+    > Clamps number within the inclusive lower and upper bounds.<br>
+    https://lodash.com/docs/4.17.15#clamp
+
+    + __random(lower = 0, upper = 1, floating = false)__
+    > Produces a random number between the inclusive lower and upper bounds.<br>
+    If only one argument is provided a number between 0 and the given number is returned.<br>
+    If floating is true, or either lower or upper are floats, a floating-point number is returned.<br>
+    https://lodash.com/docs/4.17.15#random
+
+    + __inRange(number, [start=0], end)__
+    > Checks if n is between start and up to, but not including, end.<br>
+    If end is not specified, it's set to start with start then set to 0.<br>
+    If start is greater than end the params are swapped to support negative ranges.<br>
+    https://lodash.com/docs/4.17.15#inRange
+
 
 ## Running Tests
 The projects uses [Jest](https://jestjs.io/en/) JavaScript Testing Framework. to run all tests, all you have to do is run the command:
