@@ -152,6 +152,49 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
     If start is greater than end the params are swapped to support negative ranges.<br>
     https://lodash.com/docs/4.17.15#inRange
 
++ ## Lang
+    + __isArguments(value)__
+    > Checks if value is likely an `Arguments` object.<br>
+    https://lodash.com/docs/4.17.15#isArguments
+
+    + __isArray(value)__
+    > Checks if value is classified as an `Array` object.<br>
+    https://lodash.com/docs/4.17.15#isArray
+
+    + __isArrayBuffer(value)__
+    > Checks if value is classified as an `ArrayBuffer` object.<br>
+    https://lodash.com/docs/4.17.15#isArrayBuffer
+
+    + __isArrayLike(value)__
+    > Checks if value is array-like. A value is considered array-like if<br>
+    it's not a function and has a value.length that's an integer<br>
+    greater than or equal to 0 and less than or equal to Number.MAX_SAFE_INTEGER.<br>
+    https://lodash.com/docs/4.17.15#isArrayLike
+
+    + __isArrayLikeObject(value)__
+    > This method is like `isArrayLike` except that it also checks if value is an object.
+    https://lodash.com/docs/4.17.15#isArrayLikeObject
+
+    + __isBoolean(value)__
+    > Checks if value is classified as a boolean primitive or object.
+    https://lodash.com/docs/4.17.15#isBoolean
+
+    + __isBuffer(value)__
+    > Checks if value is a buffer.
+    https://lodash.com/docs/4.17.15#isBuffer
+
+    + __isDate(value)__
+    > Checks if value is classified as a Date object.
+    https://lodash.com/docs/4.17.15#isDate
+
+    + __isEmpty(value)__
+    > Checks if value is an empty object, collection, map, or set.<br>
+    Objects are considered empty if they have no own enumerable string keyed properties.<br>
+    Array-like values such as arguments objects, arrays, buffers, strings <br>
+    are considered empty if they have a length of 0.<br>
+    Similarly, maps and sets are considered empty if they have a size of 0.<br>
+    https://lodash.com/docs/4.17.15#isEmpty
+
 
 ## Running Tests
 The projects uses [Jest](https://jestjs.io/en/) JavaScript Testing Framework. to run all tests, all you have to do is run the command:
