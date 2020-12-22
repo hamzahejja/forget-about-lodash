@@ -172,19 +172,19 @@ __lodash-recreated__ is a vanilla JavaScript Re-Creation of the popular library 
     https://lodash.com/docs/4.17.15#isArrayLike
 
     + __isArrayLikeObject(value)__
-    > This method is like `isArrayLike` except that it also checks if value is an object.
+    > This method is like `isArrayLike` except that it also checks if value is an object.<br>
     https://lodash.com/docs/4.17.15#isArrayLikeObject
 
     + __isBoolean(value)__
-    > Checks if value is classified as a boolean primitive or object.
+    > Checks if value is classified as a boolean primitive or object.<br>
     https://lodash.com/docs/4.17.15#isBoolean
 
     + __isBuffer(value)__
-    > Checks if value is a buffer.
+    > Checks if value is a buffer.<br>
     https://lodash.com/docs/4.17.15#isBuffer
 
     + __isDate(value)__
-    > Checks if value is classified as a Date object.
+    > Checks if value is classified as a Date object.<br>
     https://lodash.com/docs/4.17.15#isDate
 
     + __isEmpty(value)__
